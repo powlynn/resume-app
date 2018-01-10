@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{ experience.company }}</h1>
+  </div>
+</div>
+
+<div class="row detail">
+  <div class="col-xs-12">
+    <h3>{{ experience.city }}, {{ experience.state }}</h3>
+  </div>
+</div>
+
+<div class="row detail">
+  <div class="col-xs-2">
+    Role
+  </div>
+  <div class="col-xs-10">
+    {{ experience.role }}
+  </div>
+</div>
+
+<div class="row detail">
+  <div class="col-xs-2">
+    Dates
+  </div>
+  <div class="col-xs-10">
+    {{ experience.startDate }} - {{ experience.endDate }}
+  </div>
+</div>
+
+<div class="row detail">
+  <div class="col-xs-2">
+    Summary
+  </div>
+  <div class="col-xs-10">
+    {{ experience.summary }}
+  </div>
+</div>
+
+<div class="row detail">
+  <div class="col-xs-2">
+    Skills Utilized
+  </div>
+  <div class="col-xs-2 skill-module"
+  *ngFor="let skill of experience.skills; let i = index">
+    {{ skill }}
+  </div>
+</div>

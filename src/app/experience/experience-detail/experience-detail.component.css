@@ -1,0 +1,15 @@
+.detail{
+  margin-bottom:10px
+}
+
+.skill-module{
+  background-color:gray;
+  height:40px;
+  margin:3px;
+  color:white;
+  padding:auto;
+  border-radius:5px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px; 
+}
