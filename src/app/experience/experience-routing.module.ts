@@ -4,10 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../auth/auth-guard.service';
 import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
 import { ExperienceDetailComponent } from './experience-detail/experience-detail.component';
-import { RecipesComponent } from './recipes.component';
+import { ExperienceComponent } from './experience.component';
 
 const recipesRoutes: Routes = [
-  { path: '', component: RecipesComponent, children: [
+  { path: '', component: ExperienceComponent, children: [
     { path: 'new', component: RecipeEditComponent, canActivate: [AuthGuard] },
     { path: ':id', component: ExperienceDetailComponent },
     { path: ':id/edit', component: RecipeEditComponent, canActivate: [AuthGuard] },
@@ -23,4 +23,4 @@ const recipesRoutes: Routes = [
     AuthGuard
   ]
 })
-export class RecipesRoutingModule {}
+export class ExperienceRoutingModule {}
