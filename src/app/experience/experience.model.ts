@@ -1,4 +1,4 @@
-import { Skill }  from './skill.model';
+import { Skill, SkillExpertise }  from './skill.model';
 
 export class Experience{
   public company: string;
@@ -27,5 +27,13 @@ export class Experience{
     this.endDate = endDate;
     this.summary = summary;
     this.skills = skills;
+
+    this.ExpertSkills = this.skills.filter(s => s.expertise === SkillExpertise.Expert);
+    this.ModerateSkills = this.skills.filter(s => s.expertise === SkillExpertise.Moderate);
+    this.BeginnerSkills = this.skills.filter(s => s.expertise === SkillExpertise.Beginner);
   }
+
+  public ExpertSkills: Skill[];
+  public ModerateSkills: Skill[];
+  public BeginnerSkills: Skill[];
 }
