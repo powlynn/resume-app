@@ -7,25 +7,17 @@
   height:40px;
   color:white;
   padding:auto;
+  margin:1px;
   border-radius:5px;
   text-align: center;
   vertical-align: middle;
   line-height: 40px;
 }
 
+.detail-header{
+  font-weight: bold;
+}
+
 .skill-header{
-  font-size: 20px !important;
   margin-bottom:5px;
-}
-
-.expert{
-  background-color: #900C3F;
-}
-
-.moderate{
-  background-color: #FF5733;
-}
-
-.beginner{
-  background-color: #F0B700;
 }

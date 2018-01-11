@@ -12,7 +12,7 @@
 
 <div class="row detail">
   <div class="col-xs-2">
-    Role
+    <span class="detail-header">Role</span>
   </div>
   <div class="col-xs-10">
     {{ experience.role }}
@@ -21,7 +21,7 @@
 
 <div class="row detail">
   <div class="col-xs-2">
-    Dates
+    <span class="detail-header">Dates</span>
   </div>
   <div class="col-xs-10">
     {{ experience.startDate }} - {{ experience.endDate }}
@@ -30,7 +30,7 @@
 
 <div class="row detail">
   <div class="col-xs-2">
-    Summary
+    <span class="detail-header">Summary</span>
   </div>
   <div class="col-xs-10">
     {{ experience.summary }}
@@ -39,41 +39,11 @@
 
 <div class="row detail">
   <div class="col-xs-2">
-    Skills Utilized
+    <span class="detail-header">Skills Utilized</span>
   </div>
-</div>
-
-<div class="row detail">
-  <div class="col-xs-4">
-    <div class="row">
-      <div class="col-xs-8 col-md-offset-2 skill-module expert skill-header">
-        Heavy
-      </div>
-    </div>
-    <div class="col-xs-6 skill-module expert"
-     *ngFor="let skill of experience.ExpertSkills; let i = index">
-      {{ skill.name }}
-    </div>
-  </div>
-  <div class="col-xs-4">
-    <div class="row">
-      <div class="col-xs-8 col-md-offset-2 skill-module moderate skill-header">
-        Moderate
-      </div>
-    </div>
-    <div class="col-xs-6 skill-module moderate"
-     *ngFor="let skill of experience.ModerateSkills; let i = index">
-      {{ skill.name }}
-    </div>
-  </div>
-  <div class="col-xs-4">
-    <div class="row">
-      <div class="col-xs-8 col-md-offset-2 skill-module beginner skill-header">
-        Light
-      </div>
-    </div>
-    <div class="col-xs-6 skill-module beginner"
-     *ngFor="let skill of experience.BeginnerSkills; let i = index">
+  <div class="col-xs-10">
+    <div class="col-xs-3 skill-module"
+     *ngFor="let skill of experience.skills; let i = index">
       {{ skill.name }}
     </div>
   </div>
