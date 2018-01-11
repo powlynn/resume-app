@@ -41,11 +41,20 @@
   <div class="col-xs-2">
     Skills Utilized
   </div>
+  <div class="col-xs-2 skill-module expert">
+    Expert
+  </div>
+  <div class="col-xs-2 skill-module moderate">
+    Moderate
+  </div>
+  <div class="col-xs-2 skill-module beginner">
+    Beginner
+  </div>
 </div>
 
 <div class="row detail">
   <div class="col-xs-2 skill-module"
-  *ngFor="let skill of experience.skills; let i = index">
-    {{ skill }}
+   *ngFor="let skill of experience.skills; let i = index">
+    {{ skill.name }}
   </div>
 </div>

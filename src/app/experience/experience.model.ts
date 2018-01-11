@@ -1,3 +1,5 @@
+import { Skill }  from './skill.model';
+
 export class Experience{
   public company: string;
   public role: string;
@@ -6,7 +8,7 @@ export class Experience{
   public startDate: string;
   public endDate: string;
   public summary: string;
-  public skills: string[];
+  public skills: Skill[];
 
   constructor(company: string,
     role: string,
@@ -15,7 +17,7 @@ export class Experience{
     startDate: string,
     endDate: string,
     summary: string,
-    skills: string[])
+    skills: Skill[])
   {
     this.company = company;
     this.role = role;

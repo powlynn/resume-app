@@ -11,5 +11,17 @@
   border-radius:5px;
   text-align: center;
   vertical-align: middle;
-  line-height: 40px; 
+  line-height: 40px;
+}
+
+.expert{
+  background-color: #900C3F;
+}
+
+.moderate{
+  background-color: #FF5733;
+}
+
+.beginner{
+  background-color: #F0B700;
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 
+import { Skill, SkillExpertise } from './skill.model';
 import { Experience } from './experience.model';
 import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
@@ -20,17 +21,17 @@ export class ExperienceService {
       'present',
       'Wrote multi-threaded desktop conveyor management system in C#. Designed user interface in WPF, implementing the Model View View-Model framework. Built several processes that communicated with outside data sources (off-site servers, RFID readers, PLC conveyor systems). Was part of a two-developer team and collaborated one-on-one with the owner, helping decide which functionalities to implement, exclude, and improve. Experienced the entire SDLC including gathering requirements, design, development, testing, and implementing, while developing throughout the entire stack.',
       [
-        'C#',
-        'SQL Server',
-        'WPF',
-        'Visual Studio',
-        'XAML',
-        'MVVM Light',
-        '.NET Framework',
-        'Visual Basic',
-        'LINQ',
-        'Syncfusion',
-        'Entity Framework',
+        new Skill('C#', SkillExpertise.Expert),
+        new Skill('SQL Server', SkillExpertise.Expert),
+        new Skill('WPF', SkillExpertise.Expert),
+        new Skill('Visual Studio', SkillExpertise.Expert),
+        new Skill('XAML', SkillExpertise.Expert),
+        new Skill('MVVM Light', SkillExpertise.Moderate),
+        new Skill('.NET Framework', SkillExpertise.Moderate),
+        new Skill('Visual Basic', SkillExpertise.Moderate),
+        new Skill('LINQ', SkillExpertise.Moderate),
+        new Skill('Syncfusion', SkillExpertise.Beginner),
+        new Skill('Entity Framework', SkillExpertise.Moderate),
       ]
     ),
     new Experience(
@@ -42,9 +43,7 @@ export class ExperienceService {
       'June 2016',
       'Helped develop internal web application for Solutia Consulting called Intersect. The application is a sales and recruiting management system to be used by Solutia management and recruiters. Fixed various bugs in the application and also implemented new functionalities – namely working with Sovren on a resume parser that stores valuable data extracted from a candidate’s resume.',
       [
-        'C#',
-        'SQL Server',
-        'WPF'
+
       ]
     ),
     new Experience(
@@ -56,9 +55,7 @@ export class ExperienceService {
       'December 2015',
       'Collaborated with fulltime developers and Bas to make improvements to Menards.com. Created dynamic web applications using Java, Spring framework, and Velocity templates. Performed routine maintenance and bug fixes to Menards.com. Developed test plans and thoroughly test and debug all programs prior to implementation. Work through entire development lifecycle including creating design specifications, coding, testing and deployment.',
       [
-        'C#',
-        'SQL Server',
-        'WPF'
+
       ]
     )
   ]
