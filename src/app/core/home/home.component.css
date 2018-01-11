@@ -1,3 +1,20 @@
 h2{
   color: red;
 }
+
+.banner-pic-background{
+  position: fixed;
+  margin-top:-10px;
+  top: 1;
+  left: 0;
+  width: 100%;
+  overflow-y: hidden;
+  background-color: black;
+}
+
+.banner-pic{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 76%;
+}

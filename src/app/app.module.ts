@@ -8,7 +8,6 @@ import { SharedModule } from './shared/shared.module';
 import { ShoppingListModule } from './education/shopping-list.module';
 import { AuthModule } from './auth/auth.module'
 import { CoreModule } from './core/core.module';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -21,8 +20,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     SharedModule,
     ShoppingListModule,
     AuthModule,
-    CoreModule,
-    AngularFontAwesomeModule
+    CoreModule
   ],
   bootstrap: [AppComponent]
 })
