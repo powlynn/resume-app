@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 
+import { SkillExpertise } from '../skill.model'
 import { ExperienceService } from '../experience.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class ExperienceEditComponent implements OnInit {
   id: number;
   editMode = false;
   recipeForm: FormGroup;
+  skillExpertises: SkillExpertise;
 
   constructor(private route: ActivatedRoute,
               private experienceService: ExperienceService,
@@ -31,14 +33,6 @@ export class ExperienceEditComponent implements OnInit {
   }
 
   onSubmit() {
-    // const newRecipe = new Recipe(
-    //   this.recipeForm.value['name'],
-    //   this.recipeForm.value['description'],
-    //   this.recipeForm.value['imagePath'],
-    //   this.recipeForm.value['ingredients']);
-
-    console.log(this.recipeForm);
-
     if (this.editMode) {
       this.experienceService.updateRecipe(this.id, this.recipeForm.value);
     } else {
@@ -48,20 +42,16 @@ export class ExperienceEditComponent implements OnInit {
   }
 
   onAddSkill() {
-    console.log('kkkk');
-    (<FormArray>this.recipeForm.get('ingredients')).push(
+    (<FormArray>this.recipeForm.get('skills')).push(
       new FormGroup({
         'name': new FormControl(null, Validators.required),
-        'amount': new FormControl(null, [
-          Validators.required,
-          Validators.pattern(/^[1-9]+[0-9]*$/)
-        ])
+        'expertise': new FormControl(1, Validators.required)
       })
     );
   }
 
-  onDeleteIngredient(index: number) {
-    (<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
+  onDeleteSkill(index: number) {
+    (<FormArray>this.recipeForm.get('skills')).removeAt(index);
   }
 
   onCancel() {
@@ -69,15 +59,10 @@ export class ExperienceEditComponent implements OnInit {
   }
 
   getControls() {
-    return (<FormArray>this.recipeForm.get('ingredients')).controls;
+    return (<FormArray>this.recipeForm.get('skills')).controls;
   }
 
   private initForm() {
-    let recipeName = '';
-    let recipeImagePath = '';
-    let recipeDescription = '';
-    let recipeIngredients = new FormArray([]);
-
     let role = '';
     let company = '';
     let summary = '';
@@ -85,6 +70,7 @@ export class ExperienceEditComponent implements OnInit {
     let endDate = '';
     let city = '';
     let state = '';
+    let skills = new FormArray([]);
 
     // if (this.editMode) {
     //   const recipe = this.experienceService.getRecipe(this.id);
@@ -110,11 +96,11 @@ export class ExperienceEditComponent implements OnInit {
       'role': new FormControl(role, Validators.required),
       'company': new FormControl(company, Validators.required),
       'startDate': new FormControl(startDate, Validators.required),
-      'endDate': new FormControl(endDate, Validators.required),
+      'endDate': new FormControl(endDate),
       'summary': new FormControl(summary, Validators.required),
       'city': new FormControl(city, Validators.required),
-      'state': new FormControl(state),
-      'ingredients': recipeIngredients,
+      'state': new FormControl(state, Validators.required),
+      'skills': skills,
 
     });
   }
