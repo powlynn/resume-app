@@ -1,7 +1,3 @@
-h2{
-  color: red;
-}
-
 .banner-pic-background{
   position: fixed;
   margin-top:-10px;
@@ -17,4 +13,13 @@ h2{
   margin-left: auto;
   margin-right: auto;
   width: 76%;
+}
+
+.header-name{
+  font-size: 72px;
+  color: #C70039;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  font-style:italic;
+  font-variant: small-caps;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
