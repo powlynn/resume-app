@@ -50,7 +50,14 @@ export class ExperienceService {
       'Helped develop internal web application for Solutia Consulting called Intersect. The application is a sales and recruiting management system to be used by Solutia management and recruiters. Fixed various bugs in the application and also implemented new functionalities – namely working with Sovren on a resume parser that stores valuable data extracted from a candidate’s resume.',
       null,
       [
-
+        new Skill('C#', SkillExpertise.Expert),
+        new Skill('AngularJS (1)', SkillExpertise.Expert),
+        new Skill('Visual Studio', SkillExpertise.Expert),
+        new Skill('HTML', SkillExpertise.Expert),
+        new Skill('CSS', SkillExpertise.Expert),
+        new Skill('Javascript', SkillExpertise.Expert),
+        new Skill('SQL Server', SkillExpertise.Expert),
+        new Skill('Zurb Foundation', SkillExpertise.Beginner)
       ]
     ),
     new Experience(
@@ -64,7 +71,12 @@ export class ExperienceService {
       'Collaborated with fulltime developers and Bas to make improvements to Menards.com. Created dynamic web applications using Java, Spring framework, and Velocity templates. Performed routine maintenance and bug fixes to Menards.com. Developed test plans and thoroughly test and debug all programs prior to implementation. Work through entire development lifecycle including creating design specifications, coding, testing and deployment.',
       null,
       [
-
+        new Skill('Java', SkillExpertise.Moderate),
+        new Skill('Javascript', SkillExpertise.Moderate),
+        new Skill('SQL Server', SkillExpertise.Expert),
+        new Skill('Spring', SkillExpertise.Beginner),
+        new Skill('Hibernate', SkillExpertise.Beginner),
+        new Skill('Eclipse', SkillExpertise.Moderate),
       ]
     )
   ]
