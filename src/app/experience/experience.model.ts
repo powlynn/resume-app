@@ -7,6 +7,7 @@ export class Experience{
   public state: string;
   public startDate: string;
   public endDate: string;
+  public source: string;
   public summary: string;
   public videoUrls: string[];
   public skills: Skill[];
@@ -17,6 +18,7 @@ export class Experience{
     state: string,
     startDate: string,
     endDate: string,
+    source: string,
     summary: string,
     videoUrls: string[],
     skills: Skill[])
@@ -27,6 +29,7 @@ export class Experience{
     this.state = state;
     this.startDate = startDate;
     this.endDate = endDate;
+    this.source = source;
     this.summary = summary;
     this.skills = skills;
     this.videoUrls = videoUrls;
