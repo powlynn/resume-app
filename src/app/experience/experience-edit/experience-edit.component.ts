@@ -36,6 +36,9 @@ export class ExperienceEditComponent implements OnInit {
     //   this.recipeForm.value['description'],
     //   this.recipeForm.value['imagePath'],
     //   this.recipeForm.value['ingredients']);
+
+    console.log(this.recipeForm);
+
     if (this.editMode) {
       this.experienceService.updateRecipe(this.id, this.recipeForm.value);
     } else {
@@ -44,7 +47,8 @@ export class ExperienceEditComponent implements OnInit {
     this.onCancel();
   }
 
-  onAddIngredient() {
+  onAddSkill() {
+    console.log('kkkk');
     (<FormArray>this.recipeForm.get('ingredients')).push(
       new FormGroup({
         'name': new FormControl(null, Validators.required),
@@ -74,6 +78,14 @@ export class ExperienceEditComponent implements OnInit {
     let recipeDescription = '';
     let recipeIngredients = new FormArray([]);
 
+    let role = '';
+    let company = '';
+    let summary = '';
+    let startDate = '';
+    let endDate = '';
+    let city = '';
+    let state = '';
+
     // if (this.editMode) {
     //   const recipe = this.experienceService.getRecipe(this.id);
     //   recipeName = recipe.name;
@@ -92,14 +104,18 @@ export class ExperienceEditComponent implements OnInit {
     //       );
     //     }
     //   }
-    }
+    //}
 
-  //   this.recipeForm = new FormGroup({
-  //     'name': new FormControl(recipeName, Validators.required),
-  //     'imagePath': new FormControl(recipeImagePath, Validators.required),
-  //     'description': new FormControl(recipeDescription, Validators.required),
-  //     'ingredients': recipeIngredients
-  //   });
-  // }
+    this.recipeForm = new FormGroup({
+      'role': new FormControl(role, Validators.required),
+      'company': new FormControl(company, Validators.required),
+      'startDate': new FormControl(startDate, Validators.required),
+      'endDate': new FormControl(endDate, Validators.required),
+      'summary': new FormControl(summary, Validators.required),
+      'city': new FormControl(city, Validators.required),
+      'state': new FormControl(state),
+      'ingredients': recipeIngredients,
 
+    });
+  }
 }

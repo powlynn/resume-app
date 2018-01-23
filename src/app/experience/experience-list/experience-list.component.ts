@@ -33,9 +33,6 @@ export class ExperienceListComponent implements OnInit, OnDestroy {
   }
 
   newExperience() {
-    console.log('new exp')
-    console.log(this.route)
-    console.log(this.router)
     this.router.navigate(['new'], {relativeTo: this.route});
   }
 
