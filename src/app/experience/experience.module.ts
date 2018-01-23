@@ -9,6 +9,7 @@ import { ExperienceDetailComponent } from './experience-detail/experience-detail
 import { ExperienceItemComponent } from './experience-list/experience-item/experience-item.component';
 import { ExperienceRoutingModule } from './experience-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { SafePipe } from '../shared/pipes/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SharedModule } from '../shared/shared.module';
     ExperienceListComponent,
     ExperienceEditComponent,
     ExperienceDetailComponent,
-    ExperienceItemComponent
+    ExperienceItemComponent,
+    SafePipe
   ],
   imports: [
     CommonModule,

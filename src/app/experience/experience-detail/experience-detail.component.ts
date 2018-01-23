@@ -15,6 +15,7 @@ export class ExperienceDetailComponent implements OnInit {
   experience: Experience;
   id: number;
   sourceSafeUrl: SafeUrl;
+  videoSafeUrls: SafeUrl[];
 
   constructor(private experienceService: ExperienceService,
               private route: ActivatedRoute,
@@ -31,8 +32,6 @@ export class ExperienceDetailComponent implements OnInit {
           this.experience = this.experienceService.getRecipe(this.id);
         }
       );
-
-    this.sourceSafeUrl = this.domSanitizer.bypassSecurityTrustHtml(this.experience.source);
   }
 
   // onAddToShoppingList() {

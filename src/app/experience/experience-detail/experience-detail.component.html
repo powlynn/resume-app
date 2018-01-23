@@ -41,7 +41,7 @@
     <span class="detail-header">App Source</span>
   </div>
   <div class="col-xs-10" *ngIf="experience.source != null">
-    <a [href]="sourceSafeUrl">Go To Source</a>
+    <a [href]="experience.source | safe">Go to Source</a>
   </div>
   <div class="col-xs-10" *ngIf="experience.source == null">
     Source code not available. {{experience.company}} owns the rights to the source code.
@@ -66,6 +66,21 @@
      *ngFor="let skill of experience.skills; let i = index">
       {{ skill.name }}
     </div>
+  </div>
+</div>
+
+<div class="row detail">
+  <div class="col-xs-2">
+    <span class="detail-header">Application in Action</span>
+  </div>
+  <div class="col-xs-10" *ngFor="let url of videoSafeUrls; let i = index">
+    <iframe width="560"
+      height="315"
+      [src]="url"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
   </div>
 </div>
 
