@@ -21,7 +21,11 @@ import { Component,
         opacity: '1.0',
         transform: 'translateX(550px)'
       })),
-      transition('notAppeared => appeared', animate(400))
+      state('bounce', style({
+        transform: 'translateX(540px)'
+      })),
+      transition('notAppeared => appeared', animate(250)),
+      transition('notAppeared => bounce', animate(500))
     ])
   ]
 })
