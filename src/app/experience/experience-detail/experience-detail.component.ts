@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-
+import { AuthService } from '../../auth/auth.service';
 import { Experience } from '../experience.model';
 import { Recipe } from '../recipe.model';
 import { ExperienceService } from '../experience.service';
@@ -20,7 +20,8 @@ export class ExperienceDetailComponent implements OnInit {
   constructor(private experienceService: ExperienceService,
               private route: ActivatedRoute,
               private router: Router,
-              private domSanitizer: DomSanitizer) {
+              private domSanitizer: DomSanitizer,
+              private authService: AuthService) {
   }
 
   ngOnInit() {
@@ -46,5 +47,9 @@ export class ExperienceDetailComponent implements OnInit {
   onDeleteRecipe() {
     this.experienceService.deleteRecipe(this.id);
     this.router.navigate(['/recipes']);
+  }
+
+  isAuthenticated(){
+    return this.authService.isAuthenticated();
   }
 }

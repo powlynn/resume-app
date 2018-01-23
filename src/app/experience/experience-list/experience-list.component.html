@@ -1,9 +1,11 @@
-<div class="row">
-  <div class="col-xs-12">
-    <button class="btn btn-success" (click)="newExperience()">New Experience</button>
+<div *ngIf="isAuthenticated()">
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-success" (click)="newExperience()">New Experience</button>
+    </div>
   </div>
+  <hr>
 </div>
-<hr>
 <div class="row">
   <div class="col-xs-12">
     <app-experience-item
