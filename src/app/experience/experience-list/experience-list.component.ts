@@ -32,7 +32,10 @@ export class ExperienceListComponent implements OnInit, OnDestroy {
     this.experiences = this.experienceService.getRecipes();
   }
 
-  onNewRecipe() {
+  newExperience() {
+    console.log('new exp')
+    console.log(this.route)
+    console.log(this.router)
     this.router.navigate(['new'], {relativeTo: this.route});
   }
 

@@ -5,11 +5,11 @@ import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { ExperienceService } from '../experience.service';
 
 @Component({
-  selector: 'app-recipe-edit',
-  templateUrl: './recipe-edit.component.html',
-  styleUrls: ['./recipe-edit.component.css']
+  selector: 'app-experience-edit',
+  templateUrl: './experience-edit.component.html',
+  styleUrls: ['./experience-edit.component.css']
 })
-export class RecipeEditComponent implements OnInit {
+export class ExperienceEditComponent implements OnInit {
   id: number;
   editMode = false;
   recipeForm: FormGroup;
