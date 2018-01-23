@@ -21,6 +21,10 @@ export class ExperienceService {
       'present',
       'Wrote multi-threaded desktop conveyor management system in C#. Designed user interface in WPF, implementing the Model View View-Model framework. Built several processes that communicated with outside data sources (off-site servers, RFID readers, PLC conveyor systems). Was part of a two-developer team and collaborated one-on-one with the owner, helping decide which functionalities to implement, exclude, and improve. Experienced the entire SDLC including gathering requirements, design, development, testing, and implementing, while developing throughout the entire stack.',
       [
+        "https://www.youtube.com/embed/iJEJWAvg-gc",
+        "https://www.youtube.com/embed/WlUBEql0cH8"
+      ],
+      [
         new Skill('C#', SkillExpertise.Expert),
         new Skill('SQL Server', SkillExpertise.Expert),
         new Skill('WPF', SkillExpertise.Expert),
@@ -42,6 +46,7 @@ export class ExperienceService {
       'January 2016',
       'June 2016',
       'Helped develop internal web application for Solutia Consulting called Intersect. The application is a sales and recruiting management system to be used by Solutia management and recruiters. Fixed various bugs in the application and also implemented new functionalities – namely working with Sovren on a resume parser that stores valuable data extracted from a candidate’s resume.',
+      null,
       [
 
       ]
@@ -54,6 +59,7 @@ export class ExperienceService {
       'June 2015',
       'December 2015',
       'Collaborated with fulltime developers and Bas to make improvements to Menards.com. Created dynamic web applications using Java, Spring framework, and Velocity templates. Performed routine maintenance and bug fixes to Menards.com. Developed test plans and thoroughly test and debug all programs prior to implementation. Work through entire development lifecycle including creating design specifications, coding, testing and deployment.',
+      null,
       [
 
       ]

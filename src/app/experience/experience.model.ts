@@ -8,6 +8,7 @@ export class Experience{
   public startDate: string;
   public endDate: string;
   public summary: string;
+  public videoUrls: string[];
   public skills: Skill[];
 
   constructor(company: string,
@@ -17,6 +18,7 @@ export class Experience{
     startDate: string,
     endDate: string,
     summary: string,
+    videoUrls: string[],
     skills: Skill[])
   {
     this.company = company;
@@ -27,6 +29,7 @@ export class Experience{
     this.endDate = endDate;
     this.summary = summary;
     this.skills = skills;
+    this.videoUrls = videoUrls;
 
     this.ExpertSkills = this.skills.filter(s => s.expertise === SkillExpertise.Expert);
     this.ModerateSkills = this.skills.filter(s => s.expertise === SkillExpertise.Moderate);

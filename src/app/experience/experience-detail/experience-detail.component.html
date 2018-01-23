@@ -48,3 +48,21 @@
     </div>
   </div>
 </div>
+
+<div class="row detail">
+  <div class="col-xs-2">
+    <span class="detail-header">Application in Action</span>
+  </div>
+  <div class="col-xs-10"
+    *ngFor="let url of experience.videoUrls; let i = index">
+    {{url}}
+    <iframe width="560"
+      height="315"
+      src="url"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+
+  </div>
+</div>
