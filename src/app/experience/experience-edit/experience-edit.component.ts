@@ -67,6 +67,7 @@ export class ExperienceEditComponent implements OnInit {
     let summary = '';
     let startDate = '';
     let endDate = '';
+    let source = '';
     let city = '';
     let state = '';
     let skills = new FormArray([]);
@@ -80,6 +81,7 @@ export class ExperienceEditComponent implements OnInit {
       endDate = experience.endDate;
       city = experience.city;
       state = experience.state;
+      source = experience.source;
 
       if (experience['skills']) {
         for (let skill of experience.skills) {
@@ -101,6 +103,7 @@ export class ExperienceEditComponent implements OnInit {
       'city': new FormControl(city, Validators.required),
       'state': new FormControl(state, Validators.required),
       'skills': skills,
+      'source': new FormControl(source)
     });
   }
 }

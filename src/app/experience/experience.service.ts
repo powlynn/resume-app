@@ -19,7 +19,7 @@ export class ExperienceService {
       'Minnesota',
       'June 2016',
       null,
-      null,
+      "https://www.youtube.com",
       'Wrote multi-threaded desktop conveyor management system in C#. Designed user interface in WPF, implementing the Model View View-Model framework. Built several processes that communicated with outside data sources (off-site servers, RFID readers, PLC conveyor systems). Was part of a two-developer team and collaborated one-on-one with the owner, helping decide which functionalities to implement, exclude, and improve. Experienced the entire SDLC including gathering requirements, design, development, testing, and implementing, while developing throughout the entire stack.',
       [
         "https://www.youtube.com/embed/iJEJWAvg-gc",

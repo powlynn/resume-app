@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 import { Experience } from '../experience.model';
 import { Recipe } from '../recipe.model';
@@ -13,13 +14,16 @@ import { ExperienceService } from '../experience.service';
 export class ExperienceDetailComponent implements OnInit {
   experience: Experience;
   id: number;
+  sourceSafeUrl: SafeUrl;
 
   constructor(private experienceService: ExperienceService,
               private route: ActivatedRoute,
-              private router: Router) {
+              private router: Router,
+              private domSanitizer: DomSanitizer) {
   }
 
   ngOnInit() {
+    console.log('bam');
     this.route.params
       .subscribe(
         (params: Params) => {
@@ -27,6 +31,8 @@ export class ExperienceDetailComponent implements OnInit {
           this.experience = this.experienceService.getRecipe(this.id);
         }
       );
+
+    this.sourceSafeUrl = this.domSanitizer.bypassSecurityTrustHtml(this.experience.source);
   }
 
   // onAddToShoppingList() {

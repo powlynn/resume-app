@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http';
 import 'rxjs/Rx';
 
 import { ExperienceService } from '../experience/experience.service';
-import { Recipe } from '../experience/recipe.model';
+import { Experience } from '../experience/experience.model';
 import { AuthService } from '../auth/auth.service';
 
 @Injectable()
@@ -22,22 +22,22 @@ export class DataStorageService {
   getRecipes() {
     const token = this.authService.getToken();
 
-    // this.http.get('https://ng-recipe-book.firebaseio.com/recipes.json?auth=' + token)
-    //   .map(
-    //     (response: Response) => {
-    //       const recipes: Recipe[] = response.json();
-    //       for (let recipe of recipes) {
-    //         if (!recipe['ingredients']) {
-    //           recipe['ingredients'] = [];
-    //         }
-    //       }
-    //       return recipes;
-    //     }
-    //   )
-    //   .subscribe(
-    //     (recipes: Experience[]) => {
-    //       this.recipeService.setRecipes(recipes);
-    //     }
-    //   );
+    this.http.get('https://ng-recipe-book.firebaseio.com/recipes.json?auth=' + token)
+      .map(
+        (response: Response) => {
+          const recipes: Experience[] = response.json();
+          for (let recipe of recipes) {
+            if (!recipe['ingredients']) {
+              recipe['ingredients'] = [];
+            }
+          }
+          return recipes;
+        }
+      )
+      .subscribe(
+        (recipes: Experience[]) => {
+          this.recipeService.setRecipes(recipes);
+        }
+      );
   }
 }

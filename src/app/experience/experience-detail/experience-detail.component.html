@@ -7,7 +7,7 @@
 <hr>
 
 <div class="row">
-  <div class="col-xs-10">
+  <div class="col-xs-12">
     <h1>{{ experience.company }}</h1>
   </div>
 </div>
@@ -41,7 +41,7 @@
     <span class="detail-header">App Source</span>
   </div>
   <div class="col-xs-10" *ngIf="experience.source != null">
-    {{ experience.source }}
+    <a [href]="sourceSafeUrl">Go To Source</a>
   </div>
   <div class="col-xs-10" *ngIf="experience.source == null">
     Source code not available. {{experience.company}} owns the rights to the source code.
@@ -69,7 +69,7 @@
   </div>
 </div>
 
-<div class="row detail">
+<!--<div class="row detail">
   <div class="col-xs-2">
     <span class="detail-header">Application in Action</span>
   </div>
@@ -82,4 +82,4 @@
       allowfullscreen>
     </iframe>
   </div>
-</div>
+</div>-->
