@@ -44,8 +44,7 @@ export class ExperienceEditComponent implements OnInit {
   onAddSkill() {
     (<FormArray>this.recipeForm.get('skills')).push(
       new FormGroup({
-        'name': new FormControl(null, Validators.required),
-        'expertise': new FormControl(1, Validators.required)
+        'name': new FormControl(null, Validators.required)
       })
     );
   }
@@ -72,25 +71,26 @@ export class ExperienceEditComponent implements OnInit {
     let state = '';
     let skills = new FormArray([]);
 
-    // if (this.editMode) {
-    //   const recipe = this.experienceService.getRecipe(this.id);
-    //   recipeName = recipe.name;
-    //   recipeImagePath = recipe.imagePath;
-    //   recipeDescription = recipe.description;
-    //   if (recipe['ingredients']) {
-    //     for (let ingredient of recipe.ingredients) {
-    //       recipeIngredients.push(
-    //         new FormGroup({
-    //           'name': new FormControl(ingredient.name, Validators.required),
-    //           'amount': new FormControl(ingredient.amount, [
-    //             Validators.required,
-    //             Validators.pattern(/^[1-9]+[0-9]*$/)
-    //           ])
-    //         })
-    //       );
-    //     }
-    //   }
-    //}
+    if (this.editMode) {
+      const experience = this.experienceService.getRecipe(this.id);
+      role = experience.role;
+      company = experience.company;
+      summary = experience.summary;
+      startDate = experience.startDate;
+      endDate = experience.endDate;
+      city = experience.city;
+      state = experience.state;
+
+      if (experience['skills']) {
+        for (let skill of experience.skills) {
+          skills.push(
+            new FormGroup({
+              'name': new FormControl(skill.name, Validators.required)
+            })
+          );
+        }
+      }
+    }
 
     this.recipeForm = new FormGroup({
       'role': new FormControl(role, Validators.required),
@@ -101,7 +101,6 @@ export class ExperienceEditComponent implements OnInit {
       'city': new FormControl(city, Validators.required),
       'state': new FormControl(state, Validators.required),
       'skills': skills,
-
     });
   }
 }

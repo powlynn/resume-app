@@ -33,7 +33,7 @@ export class ExperienceDetailComponent implements OnInit {
   //   this.experienceService.addIngredientsToShoppingList(this.experience.ingredients);
   // }
 
-  onEditRecipe() {
+  editExperience() {
     this.router.navigate(['edit'], {relativeTo: this.route});
     // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
   }
