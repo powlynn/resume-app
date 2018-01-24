@@ -23,13 +23,13 @@ export class ExperienceListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.subscription = this.experienceService.recipesChanged
+    this.subscription = this.experienceService.experienceChanged
       .subscribe(
         (experiences: Experience[]) => {
           this.experiences = experiences;
         }
       );
-    this.experiences = this.experienceService.getRecipes();
+    this.experiences = this.experienceService.getExperiences();
   }
 
   newExperience() {

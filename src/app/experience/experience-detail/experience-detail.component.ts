@@ -30,22 +30,17 @@ export class ExperienceDetailComponent implements OnInit {
       .subscribe(
         (params: Params) => {
           this.id = +params['id'];
-          this.experience = this.experienceService.getRecipe(this.id);
+          this.experience = this.experienceService.getExperience(this.id);
         }
       );
   }
 
-  // onAddToShoppingList() {
-  //   this.experienceService.addIngredientsToShoppingList(this.experience.ingredients);
-  // }
-
   editExperience() {
     this.router.navigate(['edit'], {relativeTo: this.route});
-    // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
   }
 
   onDeleteRecipe() {
-    this.experienceService.deleteRecipe(this.id);
+    this.experienceService.deleteExperience(this.id);
     this.router.navigate(['/recipes']);
   }
 

@@ -13,7 +13,7 @@ import { ExperienceService } from '../experience.service';
 export class ExperienceEditComponent implements OnInit {
   id: number;
   editMode = false;
-  recipeForm: FormGroup;
+  experienceForm: FormGroup;
   skillExpertises: SkillExpertise;
 
   constructor(private route: ActivatedRoute,
@@ -34,15 +34,15 @@ export class ExperienceEditComponent implements OnInit {
 
   onSubmit() {
     if (this.editMode) {
-      this.experienceService.updateRecipe(this.id, this.recipeForm.value);
+      this.experienceService.updateExperience(this.id, this.experienceForm.value);
     } else {
-      this.experienceService.addRecipe(this.recipeForm.value);
+      this.experienceService.addExperience(this.experienceForm.value);
     }
     this.onCancel();
   }
 
   onAddSkill() {
-    (<FormArray>this.recipeForm.get('skills')).push(
+    (<FormArray>this.experienceForm.get('skills')).push(
       new FormGroup({
         'name': new FormControl(null, Validators.required)
       })
@@ -50,7 +50,7 @@ export class ExperienceEditComponent implements OnInit {
   }
 
   onDeleteSkill(index: number) {
-    (<FormArray>this.recipeForm.get('skills')).removeAt(index);
+    (<FormArray>this.experienceForm.get('skills')).removeAt(index);
   }
 
   onCancel() {
@@ -58,7 +58,7 @@ export class ExperienceEditComponent implements OnInit {
   }
 
   getControls() {
-    return (<FormArray>this.recipeForm.get('skills')).controls;
+    return (<FormArray>this.experienceForm.get('skills')).controls;
   }
 
   private initForm() {
@@ -73,7 +73,7 @@ export class ExperienceEditComponent implements OnInit {
     let skills = new FormArray([]);
 
     if (this.editMode) {
-      const experience = this.experienceService.getRecipe(this.id);
+      const experience = this.experienceService.getExperience(this.id);
       role = experience.role;
       company = experience.company;
       summary = experience.summary;
@@ -94,7 +94,7 @@ export class ExperienceEditComponent implements OnInit {
       }
     }
 
-    this.recipeForm = new FormGroup({
+    this.experienceForm = new FormGroup({
       'role': new FormControl(role, Validators.required),
       'company': new FormControl(company, Validators.required),
       'startDate': new FormControl(startDate, Validators.required),
