@@ -66,7 +66,7 @@
     <div class="col-xs-3"
     [ngClass]="(skill.name.length > 15)?'skill-module skill-module-small':'skill-module'"
      *ngFor="let skill of experience.skills; let i = index">
-      {{ skill.name }}
+      {{ skill.name | truncate:'22' }}
     </div>
   </div>
 </div>
