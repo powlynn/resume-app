@@ -3,7 +3,7 @@
   [routerLink]="[index]"
   routerLinkActive="active"
   class="list-group-item clearfix">
-  <div class="pull-left">
+  <div class="col-xs-10 pull-left">
     <h4 class="list-group-item-heading">{{ experience.company }}</h4>
     <h4 class="list-group-item-heading">{{ experience.city }}, {{ experience.state }}</h4>
     <p class="list-group-item-text">{{ experience.startDate | date:"MMMM yyyy" }} - {{ (experience.endDate | date:"MMMM yyyy") || 'present' }}</p>
