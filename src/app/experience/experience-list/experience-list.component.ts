@@ -13,7 +13,7 @@ import { AuthService } from '../../auth/auth.service';
   styleUrls: ['./experience-list.component.css']
 })
 export class ExperienceListComponent implements OnInit, OnDestroy {
-  experiences: Experience[];
+  experiences: any = [];
   subscription: Subscription;
 
   constructor(private experienceService: ExperienceService,
@@ -25,7 +25,7 @@ export class ExperienceListComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.experienceService.experienceChanged
       .subscribe(
-        (experiences: Experience[]) => {
+        (experiences: any []) => {
           this.experiences = experiences;
         }
       );

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as firebase from 'firebase';
+import { DataService } from './shared/data.service';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +7,24 @@ import * as firebase from 'firebase';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  loadedFeature = 'recipe';
+  loadedFeature = 'experience';
+  experiences : any = [];
+
+  constructor(private dataService: DataService){}
 
   ngOnInit() {
-    firebase.initializeApp({
-      apiKey: "AIzaSyDGDTtGNC4FkKpSe85qb2wLHzNi2xkxFy8",
-      authDomain: "ng-recipe-book.firebaseapp.com"
+    console.log('hi');
+
+    this.dataService.getAllExperiences().subscribe(data => {
+      console.log("data ");
+      console.log(data);
+
+      this.experiences = data;
     });
+
+    console.log(this.experiences);
+
+    console.log('ho');
   }
 
   onNavigate(feature: string) {

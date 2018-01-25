@@ -5,10 +5,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "dev": "nodemon server/server.js",
+    "build": "ng serve && node src/server/server.js"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +25,7 @@
     "@angular/platform-server": "^4.0.0",
     "@angular/router": "^4.0.0",
     "angular-font-awesome": "^3.1.2",
+    "axios": "^0.17.1",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "firebase": "^3.7.0",
@@ -42,12 +44,24 @@
     "karma": "~1.4.1",
     "karma-chrome-launcher": "~2.0.0",
     "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^0.2.0",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "karma-coverage-istanbul-reporter": "^0.2.0",
+    "nodemon": "^1.14.11",
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
     "tslint": "~4.4.2",
     "typescript": "~2.1.0"
-  }
+  },
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/powlynn/resume-app.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/powlynn/resume-app/issues"
+  },
+  "homepage": "https://github.com/powlynn/resume-app#readme",
+  "description": ""
 }
