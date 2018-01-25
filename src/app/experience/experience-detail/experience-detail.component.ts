@@ -25,12 +25,10 @@ export class ExperienceDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('bam');
     this.route.params
       .subscribe(
         (params: Params) => {
-          this.id = +params['id'];
-          this.experience = this.experienceService.getExperience(this.id);
+          this.experience = this.experienceService.getExperience(params['id']);
         }
       );
   }

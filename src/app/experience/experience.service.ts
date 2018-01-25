@@ -95,12 +95,13 @@ export class ExperienceService{
   }
 
   getExperience(index: number) {
-    return this.experiences[index];
+    return this.experiences.find(x => x._id == index);
   }
 
   addExperience(experience: Experience) {
-    this.experiences.push(experience);
-    this.experienceChanged.next(this.experiences.slice());
+    // this.experiences.push(experience);
+    // this.experienceChanged.next(this.experiences.slice());
+    this.dataService.addExperience(experience);
   }
 
   updateExperience(index: number, newRecipe: Experience) {

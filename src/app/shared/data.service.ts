@@ -15,9 +15,27 @@ export class DataService {
   getAllExperiences(){
     var url = this.env + "/experience";
 
-    console.log(url);
-
     return this.http.get(url)
-      .map(res => res.json());
+      .map(res => res.json()
+    );
+  }
+
+  addExperience(experience: any){
+    var url = this.env + "/experience";
+    var result;
+    var objectToSend = JSON.stringify(experience);
+
+    console.log('jimminy crickets');
+    console.log(objectToSend);
+
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    return this.http.post(url, objectToSend, { headers: headers })
+      .map((res: Response) => res.json())
+      .subscribe(res => {
+       result = res;
+       console.log(result);
+     });
   }
 }

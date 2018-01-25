@@ -5,7 +5,6 @@ import { HomeComponent } from './home/home.component';
 import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { AuthService } from '../auth/auth.service';
-import { DataStorageService } from '../shared/data-storage.service';
 import { ExperienceService } from '../experience/experience.service';
 import { ShoppingListService } from '../education/shopping-list.service';
 
@@ -25,7 +24,6 @@ import { ShoppingListService } from '../education/shopping-list.service';
   providers: [
     ShoppingListService,
     ExperienceService,
-    DataStorageService,
     AuthService
   ]
 })
