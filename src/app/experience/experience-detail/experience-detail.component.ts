@@ -12,7 +12,7 @@ import { ExperienceService } from '../experience.service';
   styleUrls: ['./experience-detail.component.css']
 })
 export class ExperienceDetailComponent implements OnInit {
-  experience: Experience;
+  experience: any;
   id: number;
   sourceSafeUrl: SafeUrl;
   videoSafeUrls: SafeUrl[];
@@ -35,11 +35,6 @@ export class ExperienceDetailComponent implements OnInit {
 
   editExperience() {
     this.router.navigate(['edit'], {relativeTo: this.route});
-  }
-
-  onDeleteRecipe() {
-    this.experienceService.deleteExperience(this.id);
-    this.router.navigate(['/recipes']);
   }
 
   isAuthenticated(){

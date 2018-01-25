@@ -25,7 +25,7 @@ export class ExperienceEditComponent implements OnInit {
     this.route.params
       .subscribe(
         (params: Params) => {
-          this.id = +params['id'];
+          this.id = params['id'];
           this.editMode = params['id'] != null;
           this.initForm();
         }
@@ -51,6 +51,11 @@ export class ExperienceEditComponent implements OnInit {
 
   onDeleteSkill(index: number) {
     (<FormArray>this.experienceForm.get('skills')).removeAt(index);
+  }
+
+  deleteExperience() {
+    this.experienceService.deleteExperience(this.id);
+    this.router.navigate(['/experience']);
   }
 
   onCancel() {

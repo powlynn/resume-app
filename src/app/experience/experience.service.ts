@@ -102,6 +102,7 @@ export class ExperienceService{
     // this.experiences.push(experience);
     // this.experienceChanged.next(this.experiences.slice());
     this.dataService.addExperience(experience);
+    this.experienceChanged.next(this.experiences.slice());
   }
 
   updateExperience(index: number, newRecipe: Experience) {
@@ -110,7 +111,9 @@ export class ExperienceService{
   }
 
   deleteExperience(index: number) {
-    this.experiences.splice(index, 1);
+    // this.experiences.splice(index, 1);
+    // this.experienceChanged.next(this.experiences.slice());
+    this.dataService.deleteExperience(index);
     this.experienceChanged.next(this.experiences.slice());
   }
 }

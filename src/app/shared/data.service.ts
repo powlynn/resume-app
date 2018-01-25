@@ -22,11 +22,9 @@ export class DataService {
 
   addExperience(experience: any){
     var url = this.env + "/experience";
+
     var result;
     var objectToSend = JSON.stringify(experience);
-
-    console.log('jimminy crickets');
-    console.log(objectToSend);
 
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -34,8 +32,20 @@ export class DataService {
     return this.http.post(url, objectToSend, { headers: headers })
       .map((res: Response) => res.json())
       .subscribe(res => {
-       result = res;
-       console.log(result);
+         result = res;
+         console.log(result);
      });
+  }
+
+  deleteExperience(id: number){
+    var url = this.env + "/experience/" + id;
+    var result;
+
+    return this.http.delete(url)
+      .map((res: Response) => res.json())
+      .subscribe(res => {
+         result = res;
+         console.log(result);
+   });
   }
 }
